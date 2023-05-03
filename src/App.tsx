@@ -9,7 +9,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      {/* <Reset/> */}
+      <Reset/>
       <Routes>
         <Route path="/"element={<Home/>}/>
         <Route path="/sign"element={<Sign/>}/>
