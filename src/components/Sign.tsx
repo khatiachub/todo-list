@@ -156,11 +156,8 @@ const[imgerror,setImgError]=useState('')
         }
     }
 
-    useEffect(()=>{
-        const dataImg = JSON.parse(localStorage.getItem('value'));
-        if (dataImg) {
-          setNames(dataImg);
-        }
+        useEffect(()=>{
+        setImage( JSON.parse(localStorage.getItem('value')||''));
         }, []);
         useEffect(() => {
             localStorage.setItem('value', JSON.stringify(names));
