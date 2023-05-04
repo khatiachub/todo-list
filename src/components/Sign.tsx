@@ -156,12 +156,12 @@ const[imgerror,setImgError]=useState('')
         }
     }
 
-        useEffect(()=>{
-        setImage( JSON.parse(localStorage.getItem('value')||''));
-        }, []);
-        useEffect(() => {
-            localStorage.setItem('value', JSON.stringify(names));
-          }, [names]);
+        // useEffect(()=>{
+        // setImage( JSON.parse(localStorage.getItem('value')||''));
+        // }, []);
+        // useEffect(() => {
+            // localStorage.setItem('value', JSON.stringify(names));
+        //   }, [names]);
   
           
     const myData={
