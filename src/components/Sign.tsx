@@ -121,6 +121,7 @@ const[image,setImage]=useState<string|undefined>('')
 const[border,setBorder]=useState(false)
 const[error,setError]=useState('')
 const[imgerror,setImgError]=useState('')
+      
     const handleChange=(e: React.ChangeEvent)=>{
         const target = e.target as HTMLInputElement;
         const file: File = (target.files as FileList)[0];
@@ -154,6 +155,18 @@ const[imgerror,setImgError]=useState('')
             setBorder(false)
         }
     }
+
+    useEffect(()=>{
+        const dataImg = JSON.parse(localStorage.getItem('value')||"");
+        if (dataImg) {
+          setNames(dataImg);
+        }
+        }, []);
+        useEffect(() => {
+            localStorage.setItem('value', JSON.stringify(names));
+          }, [names]);
+  
+          
     const myData={
        image:image,
        name:names
@@ -175,16 +188,6 @@ const[imgerror,setImgError]=useState('')
             nav('/todo')
         }
  }
-    // useEffect(()=>{
-    // const dataImg = JSON.parse(localStorage.getItem('value')||'');
-    // if (dataImg) {
-    //   setNames(dataImg);
-    // }
-    // }, []);
-    // useEffect(() => {
-        // localStorage.setItem('value', JSON.stringify(names));
-    //   }, [names]);
-    //   
 
     return(
         <>
