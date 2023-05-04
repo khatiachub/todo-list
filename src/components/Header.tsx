@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import LogOut from "./LogOut"
 
 const Wraper=styled.div`
     width:100%;
@@ -41,6 +41,7 @@ const myData = JSON.parse(localStorage.getItem("myData")||'');
         <Wraper>
             <Logo>TO DO</Logo>
             <Profile>
+                <LogOut/>
                 <Name>{myData.name}</Name>
                 <Image src={myData.image}></Image>
             </Profile>

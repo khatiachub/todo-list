@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Header from "./Header"
+import Header from "../Header"
 import { useEffect, useState } from "react"
 import { ChangeEvent } from 'react';
 import delette from '../images/delete_forever_FILL0_wght400_GRAD0_opsz48.svg'

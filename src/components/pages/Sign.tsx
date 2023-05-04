@@ -131,6 +131,7 @@ const[imgerror,setImgError]=useState('')
         }else{
             setImgError('')
         }
+      
     }
     const upLoader = (file:File) => {
         const reader = new FileReader();
@@ -159,11 +160,10 @@ const[imgerror,setImgError]=useState('')
         // useEffect(()=>{
         // setImage( JSON.parse(localStorage.getItem('value')||''));
         // }, []);
-        // useEffect(() => {
-            // localStorage.setItem('value', JSON.stringify(names));
-        //   }, [names]);
+        useEffect(() => {
+            localStorage.setItem('value', JSON.stringify(names));
+          }, [names]);
   
-          
     const myData={
        image:image,
        name:names
@@ -171,6 +171,8 @@ const[imgerror,setImgError]=useState('')
     localStorage.setItem("myData", JSON.stringify(myData));
     
     const nav=useNavigate();
+
+
 
     const onHandleClick=(event:any)=>{
         event.preventDefault();
@@ -184,6 +186,12 @@ const[imgerror,setImgError]=useState('')
         }else{
             nav('/todo')
         }
+        nav('/private',{
+            state:{
+                image:image,
+                name:names
+            }
+        })
  }
 
     return(
@@ -194,9 +202,10 @@ const[imgerror,setImgError]=useState('')
                 <Form onSubmit={onHandleClick}>
                     <PhotoTitle>add a photo</PhotoTitle>
                     <AddPhoto>                    
-                    <Img src={image}></Img>
+                    <Img onClick={() => document.querySelector<any> ('.image-input').click()}  src={image}></Img>
                     </AddPhoto>
-                    <UploadPhoto  onClick={() => document.querySelector<any> ('.image-input').click()} src={picture}></UploadPhoto>
+                    {!image?
+                    <UploadPhoto  onClick={() => document.querySelector<any> ('.image-input').click()} src={picture}></UploadPhoto>:null}
                     <p style={{color:'red',marginTop:7,textAlign:'center'}}>{imgerror}</p>
                     <input onChange={(e)=>handleChange(e)} className="image-input" style={{display:"none"}} type="file"/>
                     <NameTitle>fill in you name</NameTitle>

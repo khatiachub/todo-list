@@ -1,18 +1,19 @@
 import { Routes,Route} from "react-router-dom"
-import Home from "./components/Home"
-import Sign from "./components/Sign"
-import Todo from "./components/Todo"
+import Home from "./components/pages/Home"
+import Sign from "./components/pages/Sign"
 import { Reset } from "styled-reset"
-
+import Private from "./components/Private"
 
 function App() {
+
   return (
     <>
       <Reset/>
       <Routes>
         <Route path="/"element={<Home/>}/>
         <Route path="/sign"element={<Sign/>}/>
-        <Route path="/todo"element={<Todo/>}/>
+        <Route path="/private" element={<Private/>}
+        />
       </Routes>
     </>
   )
