@@ -175,16 +175,16 @@ const[imgerror,setImgError]=useState('')
             nav('/todo')
         }
  }
-    useEffect(()=>{
-    const dataImg = JSON.parse(localStorage.getItem('value')||'');
-    if (dataImg) {
-      setNames(dataImg);
-    }
-    }, []);
-    useEffect(() => {
-        localStorage.setItem('value', JSON.stringify(names));
-      }, [names]);
-      
+    // useEffect(()=>{
+    // const dataImg = JSON.parse(localStorage.getItem('value')||'');
+    // if (dataImg) {
+    //   setNames(dataImg);
+    // }
+    // }, []);
+    // useEffect(() => {
+        // localStorage.setItem('value', JSON.stringify(names));
+    //   }, [names]);
+    //   
 
     return(
         <>
