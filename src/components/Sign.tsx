@@ -157,7 +157,7 @@ const[imgerror,setImgError]=useState('')
     }
 
     useEffect(()=>{
-        const dataImg = JSON.parse(localStorage.getItem('value')||"");
+        const dataImg = JSON.parse(localStorage.getItem('value'));
         if (dataImg) {
           setNames(dataImg);
         }
